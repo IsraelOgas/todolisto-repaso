@@ -58,6 +58,7 @@ $('#descripcion_id').keyup(function () {
 //     }
 // });
 
+/*
 $(function() {
     $('.add-tarea').prop('disabled', true);
 
@@ -67,6 +68,7 @@ $(function() {
         }
     });
 });
+*/
 
 /* [GET] Mostrar detalles de una TAREA en especifico  */
 $('.table').on('click', '.detalle-tarea', function (e) {
@@ -88,3 +90,16 @@ $('.table').on('click', '.detalle-tarea', function (e) {
         console.log(data);
     });
 });
+
+// Activar botón Crear Tarea cuando se cumplan condiciones en formulario
+
+$('#boton_crear_tarea').prop('disabled', true);
+
+$('#titulo_id, #descripcion_id').keyup(function(){
+    if($('#titulo_id').val().length > 5 && $('#descripcion_id').val().length > 10){
+        $('#boton_crear_tarea').prop('disabled', false);
+    }
+    else{
+        $('#boton_crear_tarea').prop('disabled', true);
+    }
+})
