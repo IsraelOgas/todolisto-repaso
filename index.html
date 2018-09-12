@@ -12,22 +12,28 @@
     <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="node_modules/font-awesome/css/font-awesome.min.css" />
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
     <!-- Scripts Jquery -->
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
 </head>
 
 <body>
     <header>
         <nav class="navbar navbar-dark bg-dark">
             <a class="navbar-brand" href="#">ng Todo Listo!</a>
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Buscar tarea..." aria-label="Search">
+                <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+            </form>
         </nav>
     </header>
 
     <main role="main" class="container mt-5">
         <div class="row">
             <div class="col-md-4">
-                <form action="" method="POST" id="form-tarea" >
+                <form action="" method="POST" id="form-tarea">
                     <div class="form-group">
                         <label for="titulo_id">Título</label>
                         <input type="text" class="form-control" id="titulo_id" name="titulo" required>
@@ -68,7 +74,8 @@
             <hr>
             <h1 class="titulo"></h1>
             <p class="descripcion"></p>
-            <button type="submit" class="btn btn-primary" id="boton_cambiar_estado" style="display: none;">Pasar a estado En Proceso</button>
+            <button type="submit" class="btn btn-primary" id="boton_cambiar_estado" style="display: none;">Pasar a
+                estado En Proceso</button>
         </div>
 
     </main>
