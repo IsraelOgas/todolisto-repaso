@@ -1,7 +1,7 @@
 # todolisto-repaso
 
 # cosas que faltan
-- (7), CASI
+- nada
 
 # comandos
 - npm install
