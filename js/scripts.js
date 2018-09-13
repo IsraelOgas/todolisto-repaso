@@ -126,12 +126,13 @@ $('input[type=search]').keyup(function() {
 });
 
 /* Mostrar modal al presionar botón */
-
 $('#tareas').on('click', '#boton-editar', function(e){
+    e.preventDefault();
     var id = $(this).parents().eq(1).attr('id');
     $('#myModal .modal-body').html('<div class="form-group"><label for="input-titulo">Título</label><input type="text" class="form-control" id="input-titulo"></div><div id="alert-input-titulo" class="alert alert-danger" role="alert" style="display: none">El título debe tener largo mayor a 5 caracteres</div><div class="form-group"><label for="input-descripcion">Descripción</label><input type="text" class="form-control" id="input-descripcion"></div><div id="alert-input-descripcion" class="alert alert-danger" role="alert" style="display: none">La descripción debe tener largo mayor a 10 caracteres</div>');
     $.get(dominio + 'tareas/' + id, function(data){
         $('#myModal .modal-body #input-titulo').val(data.titulo);
+        // console.log($('#myModal .modal-body #input-titulo').val(data.titulo))
         $('#myModal .modal-body #input-descripcion').val(data.descripcion);
         $('#input-titulo').keyup(function () {
             var len = $(this).val().length;
@@ -165,6 +166,7 @@ $('#tareas').on('click', '#boton-editar', function(e){
               data: 'estado=' + data.estado + '&titulo=' + $('#myModal .modal-body #input-titulo').val() + '&descripcion=' + $('#myModal .modal-body #input-descripcion').val()
             }).done(function(){
                 console.log('ok');
+                location. reload(true);
             }).fail(function(){
                 console.log('fail');
             });
